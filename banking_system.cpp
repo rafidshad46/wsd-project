@@ -78,6 +78,30 @@ void displayAccount(){
     cout << "3. Salary Account" << endl << endl;
     cout << "====================================================================" << endl;
 }
+void createAccount(){
+    cout << endl << endl << "Type of Account you want to create" << endl << endl;
+    cout << "1. Create Current Account" << endl;
+    cout << "2. Create Saving Account" << endl;
+    cout << "3. Create Salary Account" << endl << endl;
+    cout << "====================================================================" << endl;
+}
+void upgradeAccount(){
+    cout << endl << endl << "Type of Account you want to upgrade" << endl << endl;
+    cout << "1. Upgrade Current Account" << endl;
+    cout << "2. Upgrade Saving Account" << endl;
+    cout << "3. Upgrade Salary Account" << endl << endl;
+    cout << "====================================================================" << endl;
+}
+void changeDetails(){
+    cout << "1. Change name" << endl;
+    cout << "2. Change passward" << endl;
+    cout << "3. Change date of birth" << endl;
+    cout << "4. Change address" << endl;
+    cout << "5. Change contact Number" << endl;
+    cout << "====================================================================" << endl;
+
+}
+
 
 void createCurrentAccount(){
     string name;
@@ -111,7 +135,7 @@ void createCurrentAccount(){
     cin >> balance;
     cout << endl;
     if(balance < 500){
-        cout << "Sorry You need to have Minimum 500 in your create account " << endl;
+        cout << "Sorry You need to deposit Minimum 500 to create account " << endl << endl;
         createCurrentAccount();
     }
     customer[++curCusId] = currentAccount(name, contactNo, dateofbirth, address, balance, passward);
@@ -153,7 +177,7 @@ void createSavingAccount(){
     cin >> balance;
     cout << endl;
     if(balance < 500){
-        cout << "Sorry You need to have Minimum 500 in your create account " << endl;
+       cout << "Sorry You need to deposit Minimum 500 to create account " << endl << endl;
         createSavingAccount();
     }
     customer1[++curCusId1] = savingAccount(name, contactNo, dateofbirth, address, balance, passward);
@@ -194,7 +218,7 @@ void createSalaryAccount(){
     cin >> balance;
     cout << endl;
     if(balance < 500){
-        cout << "Sorry You need to have Minimum 500 in your create account " << endl;
+        cout << "Sorry You need to deposit Minimum 500 to create account " << endl << endl;
         createSalaryAccount();
     }
     customer2[++curCusId2] = salaryAccount(name, contactNo, dateofbirth, address, balance, passward);
@@ -204,15 +228,7 @@ void createSalaryAccount(){
 
 }
 
-void changeDetails(){
-    cout << "1. Change name" << endl;
-    cout << "2. Change passward" << endl;
-    cout << "3. Change date of birth" << endl;
-    cout << "4. Change address" << endl;
-    cout << "5. Change contact Number" << endl;
-    cout << "====================================================================" << endl;
 
-}
 void updateCurrentAccount(){
     int id, passward;
     cout << "Enter your bank ID :";
@@ -227,29 +243,29 @@ void updateCurrentAccount(){
     }
 
     changeDetails();
-    cout << "press anykey ";
+    cout << "press anykey :";
     int k;
     cin >> k;
     if(k == 1){
-        cout << "Enter new name " << endl;
+        cout << "Enter new name :" << endl;
         string nm;
         cin >> nm;
         customer[id-100].name = nm;
     }
     if(k == 2){
-        cout << "Enter new passward " << endl;
+        cout << "Enter new passward :" << endl;
         int nm;
         cin >> nm;
         customer[id-100].passward = nm;
     }
     if(k == 3){
-        cout << "Enter new date of birth " << endl;
+        cout << "Enter new date of birth :" << endl;
         string nm;
         cin >> nm;
         customer[id-100].dateofbirth = nm;
     }
     if(k == 4){
-        cout << "Enter new address " << endl;
+        cout << "Enter new address :" << endl;
         string nm;
         cin >> nm;
         customer[id-100].address = nm;
@@ -274,29 +290,29 @@ void updateSavingAccount(){
     }
 
     changeDetails();
-    cout << "press anykey ";
+    cout << "press anykey :";
     int k;
     cin >> k;
     if(k == 1){
-        cout << "Enter new name " << endl;
+        cout << "Enter new name :" << endl;
         string nm;
         cin >> nm;
         customer1[id-200].name = nm;
     }
     if(k == 2){
-        cout << "Enter new passward " << endl;
+        cout << "Enter new passward :" << endl;
         int nm;
         cin >> nm;
         customer1[id-200].passward = nm;
     }
     if(k == 3){
-        cout << "Enter new date of birth " << endl;
+        cout << "Enter new date of birth :" << endl;
         string nm;
         cin >> nm;
         customer1[id-200].dateofbirth = nm;
     }
     if(k == 4){
-        cout << "Enter new address " << endl;
+        cout << "Enter new address :" << endl;
         string nm;
         cin >> nm;
         customer1[id-200].address = nm;
@@ -321,29 +337,29 @@ void updateSalaryAccount(){
     }
 
     changeDetails();
-    cout << "press anykey ";
+    cout << "press anykey :";
     int k;
     cin >> k;
     if(k == 1){
-        cout << "Enter new name " << endl;
+        cout << "Enter new name :" << endl;
         string nm;
         cin >> nm;
         customer2[id-300].name = nm;
     }
     if(k == 2){
-        cout << "Enter new passward " << endl;
+        cout << "Enter new passward :" << endl;
         int nm;
         cin >> nm;
         customer2[id-300].passward = nm;
     }
     if(k == 3){
-        cout << "Enter new date of birth " << endl;
+        cout << "Enter new date of birth :" << endl;
         string nm;
         cin >> nm;
         customer2[id-300].dateofbirth = nm;
     }
     if(k == 4){
-        cout << "Enter new address " << endl;
+        cout << "Enter new address :" << endl;
         string nm;
         cin >> nm;
         customer2[id-300].address = nm;
@@ -650,6 +666,7 @@ void searchSalaryAccount(){
 }
 void homepage(){
     while(true){
+
         cout << "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" << endl<< endl;
         int key;
         cout << " 1. Create a new account" << endl;
@@ -661,23 +678,26 @@ void homepage(){
         cout << " 7. Search for account" << endl;
         cout << " 8. Exit" << endl;
 
-        cout << "Press Any key " << endl;
+        cout << "Press Any key :";
         cin >> key;
+        cout << endl;
         if(key == 1){
-            displayAccount();
+            createAccount();
             int x;
-            cout << "Press Any key ";
+            cout << "Press Any key :";
             cin >> x;
+            cout << endl;
             if(x == 1) createCurrentAccount();
             if(x == 2) createSavingAccount();
             if(x == 3) createSalaryAccount();
         }
         if(key == 2) displayAccount();
         if(key == 3) {
-            displayAccount();
+            upgradeAccount();
             int x;
-            cout << "Press Any key ";
+            cout << "Press Any key :";
             cin >> x;
+            cout << endl;
             if(x == 1) updateCurrentAccount();
             if(x == 2) updateSavingAccount();
             if(x == 3) updateSalaryAccount();
@@ -685,8 +705,9 @@ void homepage(){
         if(key == 4) {
             displayAccount();
             int x;
-            cout << "Press Any key ";
+            cout << "Press Any key :";
             cin >> x;
+            cout << endl;
             if(x == 1) deleteCurrentAccount();
             if(x == 2) deleteSavingAccount();
             if(x == 3) deleteSalaryAccount();
@@ -694,8 +715,9 @@ void homepage(){
         if(key == 5){
             displayAccount();
             int x;
-            cout << "Press Any key ";
+            cout << "Press Any key :";
             cin >> x;
+            cout << endl;
             if(x == 1) depositCurrentAccount();
             if(x == 2) depositSavingAccount();
             if(x == 3) depositSalaryAccount();
@@ -703,8 +725,9 @@ void homepage(){
         if(key == 6){
             displayAccount();
             int x;
-            cout << "Press Any key ";
+            cout << "Press Any key :";
             cin >> x;
+            cout << endl;
             if(x == 1) withdrawCurrentAccount();
             if(x == 2) withdrawSavingAccount();
             if(x == 3) withdrawSalaryAccount();
@@ -712,8 +735,9 @@ void homepage(){
         if(key == 7){
             displayAccount();
             int x;
-            cout << "Press Any key ";
+            cout << "Press Any key :";
             cin >> x;
+            cout << endl;
             if(x == 1) searchCurrentAccount();
             if(x == 2) searchSavingAccount();
             if(x == 3) searchSalaryAccount();
@@ -726,8 +750,8 @@ void homepage(){
 
 
 int main(){
-    //read();
-   // write();
-    homepage();
 
+    cout <<"                                Welcome to IFIC bank Bangladesh !!!!              " << endl;
+    homepage();
+    return 0;
 }
