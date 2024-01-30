@@ -479,6 +479,87 @@ void depositSalaryAccount(){
 
     cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
 }
+
+void withdrawCurrentAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer[id-100].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    int money;
+    cout << endl << "Enter the amount you want to withdraw" << endl << endl;
+    cin >> money;
+
+    if(customer[id-100].balance - money < 500){
+        cout << "Transactions Failed!!!!" << endl;
+        cout << "You need to have atleast 500 in your account" << endl<< endl;
+        return;
+    }
+
+    customer[id-100].balance -= money;
+
+    cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
+}
+
+void withdrawSavingAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer1[id-200].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    int money;
+    cout << endl << "Enter the amount you want to withdraw" << endl << endl;
+    cin >> money;
+
+    if(customer1[id-200].balance - money < 500){
+        cout << "Transactions Failed!!!!" << endl;
+        cout << "You need to have atleast 500 in your account" << endl<< endl;
+        return;
+    }
+
+    customer1[id-200].balance -= money;
+
+    cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
+}
+
+void withdrawSalaryAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer2[id-300].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    int money;
+    cout << endl << "Enter the amount you want to withdraw" << endl << endl;
+    cin >> money;
+
+    if(customer2[id-300].balance - money < 500){
+        cout << "Transactions Failed!!!!" << endl;
+        cout << "You need to have atleast 500 in your account" << endl<< endl;
+        return;
+    }
+
+    customer2[id-300].balance -= money;
+
+    cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
+}
 void homepage(){
     while(true){
         int key;
@@ -529,6 +610,15 @@ void homepage(){
             if(x == 1) depositCurrentAccount();
             if(x == 2) depositSavingAccount();
             if(x == 3) depositSalaryAccount();
+        }
+        if(key == 6){
+            displayAccount();
+            int x;
+            cout << "Press Any key ";
+            cin >> x;
+            if(x == 1) withdrawCurrentAccount();
+            if(x == 2) withdrawSavingAccount();
+            if(x == 3) withdrawSalaryAccount();
         }
         if(key == 8) return;
     }
