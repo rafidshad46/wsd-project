@@ -353,6 +353,70 @@ void updateSalaryAccount(){
     cout << "Update Done!!!!!!!" << endl;
     cout << endl << endl << endl;
 }
+
+void deleteCurrentAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer[id-100].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    customer[id-100].name = "deleted";
+    customer[id-100].contactNo = "deleted";
+    customer[id-100].address = "deleted";
+    customer[id-100].dateofbirth = "deleted";
+    customer[id-100].passward = -1;
+    customer[id-100].balance = -1;
+    cout << endl << endl << "Your Account has been deleted successfully!!!!!!" << endl;
+}
+
+void deleteSavingAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer1[id-200].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    customer1[id-200].name = "deleted";
+    customer1[id-200].contactNo = "deleted";
+    customer1[id-200].address = "deleted";
+    customer1[id-200].dateofbirth = "deleted";
+    customer1[id-200].passward = -1;
+    customer1[id-200].balance = -1;
+    cout << endl << endl << "Your Account has been deleted successfully!!!!!!" << endl;
+}
+
+void deleteSalaryAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer2[id-300].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    customer2[id-300].name = "deleted";
+    customer2[id-300].contactNo = "deleted";
+    customer2[id-300].address = "deleted";
+    customer2[id-300].dateofbirth = "deleted";
+    customer2[id-300].passward = -1;
+    customer2[id-300].balance = -1;
+    cout << endl << endl << "Your Account has been deleted successfully!!!!!!" << endl;
+}
+
 void homepage(){
     while(true){
         int key;
@@ -385,6 +449,15 @@ void homepage(){
             if(x == 1) updateCurrentAccount();
             if(x == 2) updateSavingAccount();
             if(x == 3) updateSalaryAccount();
+        }
+        if(key == 4) {
+            displayAccount();
+            int x;
+            cout << "Press Any key ";
+            cin >> x;
+            if(x == 1) deleteCurrentAccount();
+            if(x == 2) deleteSavingAccount();
+            if(x == 3) deleteSalaryAccount();
         }
         if(key == 8) return;
     }
