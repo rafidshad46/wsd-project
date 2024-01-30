@@ -417,6 +417,68 @@ void deleteSalaryAccount(){
     cout << endl << endl << "Your Account has been deleted successfully!!!!!!" << endl;
 }
 
+void depositCurrentAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer[id-100].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    int money;
+    cout << endl << "Enter the amount you want to deposit" << endl << endl;
+    cin >> money;
+
+    customer[id-100].balance += money;
+
+    cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
+
+}
+void depositSavingAccount(){
+     int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer1[id-200].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    int money;
+    cout << endl << "Enter the amount you want to deposit" << endl << endl;
+    cin >> money;
+
+    customer1[id-200].balance += money;
+
+    cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
+}
+
+void depositSalaryAccount(){
+    int id, passward;
+    cout << "Enter your bank ID :";
+    cin >> id;
+    cout << endl;
+    cout << "Enter your passward :";
+    cin >> passward;
+    cout << endl;
+    if(customer2[id-300].passward != passward){
+        cout << "Wrong passward!!!!!\n Try Again!!!" << endl;
+        return;
+    }
+    int money;
+    cout << endl << "Enter the amount you want to deposit" << endl << endl;
+    cin >> money;
+
+    customer2[id-300].balance += money;
+
+    cout << endl << endl<< "Transactions Sucesssfull!!!!!!" << endl << endl;
+}
 void homepage(){
     while(true){
         int key;
@@ -458,6 +520,15 @@ void homepage(){
             if(x == 1) deleteCurrentAccount();
             if(x == 2) deleteSavingAccount();
             if(x == 3) deleteSalaryAccount();
+        }
+        if(key == 5){
+            displayAccount();
+            int x;
+            cout << "Press Any key ";
+            cin >> x;
+            if(x == 1) depositCurrentAccount();
+            if(x == 2) depositSavingAccount();
+            if(x == 3) depositSalaryAccount();
         }
         if(key == 8) return;
     }
